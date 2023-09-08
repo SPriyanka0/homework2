@@ -33,7 +33,7 @@ public class Hw2PrsApplication {
             System.out.println("cat fact: " + catFact);
 
         } catch (JsonProcessingException ex) {
-            System.out.println("error in ravenPrice");
+            System.out.println("error in catFact");
         }
     }
 

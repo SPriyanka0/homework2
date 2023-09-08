@@ -12,14 +12,14 @@ public class Hw2PrsApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(Hw2PrsApplication.class, args);
-        ravenPrice();
+        catFact();
         System.exit(0);
     }
 
-    public static void ravenPrice() {
+    public static void catFact() {
 
         try {
-            String url = " https://restcountries.com/v3.1/all ";
+            String url = "https://catfact.ninja/fact";
             RestTemplate restTemplate = new RestTemplate();
             ObjectMapper mapper = new ObjectMapper();
 
@@ -27,10 +27,10 @@ public class Hw2PrsApplication {
             JsonNode root = mapper.readTree(jSonPrice);
 
             //gets country name
-            String countryName = root.findValue("name").asText();
+            String catFact = root.findValue("fact").asText();
 
             //print vals
-            System.out.println("Country: " + countryName);
+            System.out.println("cat fact: " + catFact);
 
         } catch (JsonProcessingException ex) {
             System.out.println("error in ravenPrice");
